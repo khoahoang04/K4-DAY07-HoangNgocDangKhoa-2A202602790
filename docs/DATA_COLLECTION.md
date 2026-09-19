@@ -85,7 +85,6 @@ Mỗi file có đúng một dòng, dùng header sau:
 doc_id,file_path,title,source_url,retrieved_at,document_version,license_or_permission
 course-registration-deadline,data/dang-ky-hoc-phan/hoc-phan.md,Hạn đăng ký học phần,https://example.edu/quy-dinh/dang-ky-hoc-phan,2026-09-18,2026-09-01,public-source
 ```
-
 `license_or_permission` ghi căn cứ sử dụng, ví dụ `public-source`, `CC-BY-4.0`, hoặc `team-owned`.
 
 ## 6. Checklist trước benchmark

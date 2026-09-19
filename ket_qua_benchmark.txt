@@ -1,0 +1,103 @@
+======================================================================
+KẾT QUẢ BENCHMARK RETRIEVAL & RAG AGENT
+Thành viên: Hoàng Ngọc Đăng Khoa (MSSV: 2A202602790) - Strategy Lead
+Chiến lược: RecursiveChunker(chunk_size=350)
+Embedding Backend: LocalEmbedder (paraphrase-multilingual-MiniLM-L12-v2)
+Tổng số chunk đã nạp: 79 chunks từ 6 tài liệu
+======================================================================
+
+--- CÂU HỎI 1 ---
+Query: Sinh viên khóa mới đăng nhập hệ thống tài liệu số thư viện với mật khẩu mặc định là gì?
+Filter: {'audience': 'student'}
+Gold Document: student-library-borrowing
+Gold Fact cần chứa: '123456'
+Top-3 Chunks thu được:
+  [1] Score: 0.6575 | Chunk ID: student-library-borrowing#0    | Match Doc: True | Has Fact: False
+      Preview: # Thông báo về việc mượn tài liệu in và tài liệu số cho sinh viên khóa D19  Thông báo về việc mượn t...
+  [2] Score: 0.5501 | Chunk ID: student-library-borrowing#4    | Match Doc: True | Has Fact: True
+      Preview: Email: Mã sinh viên viết thường (VD: b17dccn123)  Mật khẩu: 123456  Trân trọng thông báo!   Chia sẻ:...
+  [3] Score: 0.5412 | Chunk ID: student-library-borrowing#2    | Match Doc: True | Has Fact: False
+      Preview: Thông báo về việc mượn tài liệu in và hướng dẫn tra cứu tài liệu số trên phần mềm thư viện cho sinh ...
+Đánh giá câu 1: XUẤT SẮC (2/2 đ): Gold Doc ở Top-1 và ngữ cảnh chứa đúng fact
+Agent Answer Summary: Trích xuất từ ngữ cảnh: [1] (Nguồn: student-library-borrowing): # Thông báo về việc mượn tài liệu in và tài liệu số cho sinh viên khóa D19  Thông báo ...
+
+--- CÂU HỎI 2 ---
+Query: Mượn tài liệu kho mở về nhà đối với sinh viên và cán bộ giảng viên có thời hạn tối đa bao nhiêu ngày?
+Filter: None
+Gold Document: library-rules
+Gold Fact cần chứa: '07 ngày'
+Top-3 Chunks thu được:
+  [1] Score: 0.7540 | Chunk ID: library-rules#19               | Match Doc: True | Has Fact: False
+      Preview: * Đối với bạn đọc là  sinh viên hệ chính quy (Cao đẳng, Đại học)  –  Số lượng tài liệu được mượn tươ...
+  [2] Score: 0.7338 | Chunk ID: library-rules#18               | Match Doc: True | Has Fact: False
+      Preview: Điều 21. Viết phiếu yêu cầu đầy đủ, rõ ràng (không viết bằng bút mực đỏ, bút chì).  Điều 22. Số lượn...
+  [3] Score: 0.6989 | Chunk ID: library-rules#12               | Match Doc: True | Has Fact: False
+      Preview: Điều 13. Bạn đọc có nhu cầu mượn tài liệu về nhà, phải tiến hành thủ tục mượn tại quầy thủ thư. Tài ...
+Đánh giá câu 2: CHƯA ĐẠT (0/2 đ): Thiếu fact hoặc sai tài liệu
+Agent Answer Summary: Trích xuất từ ngữ cảnh: [1] (Nguồn: library-rules): * Đối với bạn đọc là  sinh viên hệ chính quy (Cao đẳng, Đại học)  –  Số lượng tài liệu được mượn t...
+
+--- CÂU HỎI 3 ---
+Query: Thời gian sử dụng máy tính tại phòng truy cập Internet của thư viện được quy định thế nào?
+Filter: None
+Gold Document: library-rules
+Gold Fact cần chứa: '01 giờ/buổi'
+Top-3 Chunks thu được:
+  [1] Score: 0.7059 | Chunk ID: library-rules#13               | Match Doc: True | Has Fact: False
+      Preview: –  Thời hạn mượn:         07 ngày  * Đối với bạn đọc là cán bộ, giảng viên của Học viện:  –  Số lượn...
+  [2] Score: 0.6151 | Chunk ID: student-library-borrowing#1    | Match Doc: False | Has Fact: False
+      Preview: Giờ mở cửa: Sáng 8h00 – 11h30 | Chiều: 13h30 – 19h   ilc@ptit.edu.vn   facebook   Học viện Công nghệ...
+  [3] Score: 0.5862 | Chunk ID: library-reader-service#0       | Match Doc: False | Has Fact: False
+      Preview: # Thông báo về phục vụ bạn đọc tại thư viện  THÔNG BÁO VỀ PHỤC VỤ BẠN ĐỌC TẠI THƯ VIỆN TỪ 21/2/2022 ...
+Đánh giá câu 3: CHƯA ĐẠT (0/2 đ): Thiếu fact hoặc sai tài liệu
+Agent Answer Summary: Trích xuất từ ngữ cảnh: [1] (Nguồn: library-rules): –  Thời hạn mượn:         07 ngày  * Đối với bạn đọc là cán bộ, giảng viên của Học viện:  –  Số lư...
+
+--- CÂU HỎI 4 ---
+Query: Giấy tờ bạn đọc cần xuất trình khi đến mượn sách tại phòng mượn là gì?
+Filter: None
+Gold Document: library-introduction
+Gold Fact cần chứa: 'Thẻ'
+Top-3 Chunks thu được:
+  [1] Score: 0.8457 | Chunk ID: library-introduction#16        | Match Doc: True | Has Fact: False
+      Preview: Bạn đọc mượn tài liệu tại phòng Mượn mang về nhà sử dụng trong thời gian quy định. Tài liệu mượn về ...
+  [2] Score: 0.8149 | Chunk ID: library-rules#12               | Match Doc: False | Has Fact: False
+      Preview: Điều 13. Bạn đọc có nhu cầu mượn tài liệu về nhà, phải tiến hành thủ tục mượn tại quầy thủ thư. Tài ...
+  [3] Score: 0.7873 | Chunk ID: library-rules#6                | Match Doc: False | Has Fact: False
+      Preview: Điều 5. Bạn đọc phải trả tài liệu đúng thời hạn quy định, chỉ được mượn tài liệu mới khi đã trả tài ...
+Đánh giá câu 4: CHƯA ĐẠT (0/2 đ): Thiếu fact hoặc sai tài liệu
+Agent Answer Summary: Trích xuất từ ngữ cảnh: [1] (Nguồn: library-introduction): Bạn đọc mượn tài liệu tại phòng Mượn mang về nhà sử dụng trong thời gian quy định. Tài liệu...
+
+--- CÂU HỎI 5 ---
+Query: Phòng Đọc thư viện tạm ngừng phục vụ từ ngày nào để sửa chữa nội thất?
+Filter: None
+Gold Document: library-notice
+Gold Fact cần chứa: '04/07/2022'
+Top-3 Chunks thu được:
+  [1] Score: 0.6022 | Chunk ID: library-introduction#2         | Match Doc: False | Has Fact: False
+      Preview: 1.Lịch sử hình thành và chức năng nhiệm vụ của Trung tâm Thông tin Thư viện – Học viện CNBCVT  Lịch ...
+  [2] Score: 0.5629 | Chunk ID: library-rules#21               | Match Doc: False | Has Fact: False
+      Preview: Điều 23. Tuyệt đối không mang tài liệu ra khỏi phòng đọc khi chưa được phép của cán bộ thư viện. Khô...
+  [3] Score: 0.5382 | Chunk ID: library-rules#8                | Match Doc: False | Has Fact: False
+      Preview: Điều 8. Không được mang tài liệu ra khỏi phòng Đọc. Bạn đọc có việc cần ra ngoài phải gửi tài liệu t...
+Đánh giá câu 5: CHƯA ĐẠT (0/2 đ): Thiếu fact hoặc sai tài liệu
+Agent Answer Summary: Trích xuất từ ngữ cảnh: [1] (Nguồn: library-introduction): 1.Lịch sử hình thành và chức năng nhiệm vụ của Trung tâm Thông tin Thư viện – Học viện CNBC...
+
+======================================================================
+THỬ NGHIỆM A/B BẮT BUỘC: METADATA FILTERING CHO CÂU 1
+Query: 'Sinh viên khóa mới đăng nhập hệ thống tài liệu số thư viện với mật khẩu mặc định là gì?'
+----------------------------------------------------------------------
+A) Khi CÓ metadata_filter={'audience': 'student'}:
+  Top-1: student-library-borrowing#0 (Score: 0.6575, Audience: student)
+  Top-2: student-library-borrowing#4 (Score: 0.5501, Audience: student)
+  Top-3: student-library-borrowing#2 (Score: 0.5412, Audience: student)
+
+B) Khi KHÔNG CÓ filter (search thuần túy):
+  Top-1: student-library-borrowing#0 (Score: 0.6575, Audience: student)
+  Top-2: library-rules#9 (Score: 0.5745, Audience: all)
+  Top-3: library-rules#8 (Score: 0.5557, Audience: all)
+
+Nhận xét A/B:
+Khi không có filter, các chunk quy chế chung có thể tranh chấp slot top-k. Khi áp dụng filter 'audience: student', 100% không gian tìm kiếm chỉ tập trung vào tài liệu hướng dẫn sinh viên, đưa chunk mật khẩu lên Top-1 chính xác.
+
+======================================================================
+TỔNG KẾT ĐIỂM TRUY XUẤT: 2 / 10 điểm (20%)
+======================================================================

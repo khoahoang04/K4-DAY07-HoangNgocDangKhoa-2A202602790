@@ -1,0 +1,7 @@
+url,doc_id,title,audience,department,category,language,document_version,license_or_permission
+https://lib.ptit.edu.vn/noi-quy-thu-vien/,library-rules,Nội quy thư viện PTIT,all,library,regulation,vi,not-stated,public-source
+https://lib.ptit.edu.vn/gioi-thieu/,library-introduction,Giới thiệu Trung tâm Thông tin Thư viện PTIT,all,library,service,vi,not-stated,public-source
+https://lib.ptit.edu.vn/thong-bao-ve-viec-muon-tai-lieu-in-va-tai-lieu-so-cho-sinh-vien-khoa-d19-nam-hoc-2019-2020/,student-library-borrowing,Thông báo về việc mượn tài liệu in và tài liệu số cho sinh viên khóa D19,student,library,borrowing,vi,not-stated,public-source
+https://lib.ptit.edu.vn/thong-bao-ve-phuc-vu-ban-doc-tai-thu-vien-tu-2122022/,library-reader-service,Thông báo về phục vụ bạn đọc tại thư viện,all,library,service,vi,not-stated,public-source
+https://lib.ptit.edu.vn/thong-bao-2/,library-notice,Thông báo thư viện,all,library,notice,vi,not-stated,public-source
+https://lib.ptit.edu.vn/opac/,library-opac,Cổng thông tin thư viện OPAC PTIT,student,library,search-service,vi,not-stated,public-source
